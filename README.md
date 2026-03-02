@@ -1,7 +1,5 @@
 # Hello World Module
 
-**Machine name:** `hello_world`
-**Drupal version:** 11.x
 **Type:** Custom module
 
 ## Overview

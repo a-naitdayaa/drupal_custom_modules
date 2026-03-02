@@ -1,0 +1,16 @@
+{
+    "name": "a-naitdayaa/hello_world",
+    "description": "A simple Hello World Drupal module",
+    "autoload": {
+        "psr-4": {
+            "ANaitdayaa\\HelloWorld\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "a-naitdayaa",
+            "email": "a.naitdayaa@void.fr"
+        }
+    ],
+    "require": {}
+}

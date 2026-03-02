@@ -1,0 +1,17 @@
+# Ignore Composer vendor folders (not needed for a module repo)
+vendor/
+
+# Ignore IDE/editor files
+*.idea/
+*.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.log
+*.cache
+*.tmp

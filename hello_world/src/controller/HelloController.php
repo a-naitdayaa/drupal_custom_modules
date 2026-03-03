@@ -13,8 +13,9 @@ class HelloController extends ControllerBase
 {
   public function content(){
     return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Hello world !'),
+      '#theme' => 'hello_block',
+      '#custom_data' => ['age' => '31', 'DOB' => '3 March 2026'],
+      '#custom_string' => 'Hello Block!',
     ];
   }
 }

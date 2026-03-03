@@ -1,6 +1,8 @@
 {
     "name": "a-naitdayaa/hello_world",
     "description": "A simple Hello World Drupal module",
+    "license": "GPL-2.0-or-later",
+    "type": "drupal-module",
     "autoload": {
         "psr-4": {
             "ANaitdayaa\\HelloWorld\\": "src/"

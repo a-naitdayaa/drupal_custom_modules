@@ -1,19 +1,29 @@
-# Hello World Module
+# Custom Drupal Modules
+
+This repository contains two custom Drupal modules:
+
+1. **Hello World** – A simple example module with a page and a block.
+2. **Anytown** – A placeholder module.
+
+---
+
+## Modules Overview
+
+### Hello World Module
 
 **Type:** Custom module
 
-## Overview
 
 The `hello_world` module is a simple module demonstrating:
 
 - A custom page at `/hello-world`
 - A reusable block plugin
 
-This module is intended for learning and experimentation.
+This module is intended for learning purposes only.
 
 ---
 
-## Installation
+**Installation**
 
 1. Copy the module folder to your Drupal project:
 
@@ -34,15 +44,14 @@ This module is intended for learning and experimentation.
   ```
 ---
 
-## Features
-
-### 1. Custom Page
+**Features**
+1. Custom Page
 
 - URL: `/hello-world`
 - Displays: "Hello world!"
 - Implemented using a controller
 
-### 2. Custom Block
+2. Custom Block
 
 - Block name: **Hello block**
 - Category: **Custom**
@@ -51,19 +60,38 @@ This module is intended for learning and experimentation.
 
 ---
 
-## Usage
+**Usage**
 
-### View the page
+- Visit ```/hello-world```
 
-Visit:
+- Place the block
 
-/hello-world
+  1. Go to **Structure → Block layout**
+  2. Click **Place block**
+  3. Search for **Hello block**
+  4. Choose a region and save
 
-### Place the block
+---
 
-1. Go to **Structure → Block layout**
-2. Click **Place block**
-3. Search for **Hello block**
-4. Choose a region and save
+### Anytown Module
 
+**Type:** Custom module
+
+**Installation:**
+
+1. Copy the module folder to your Drupal project:
+
+```bash
+  web/modules/custom/anytown
+```
+
+2. Enable the module:
+
+```bash
+  drush en anytown
+  drush cr
+```
+
+**Utility:**
+Currently this module serves as a placeholder and does not contain any functionality.
 ---

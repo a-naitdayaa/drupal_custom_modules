@@ -64,14 +64,18 @@ class ForecastClient implements ForecastClientInterface {
     foreach($data->list as $weather){
       $forecast[$weather->day] = [
         'weekday' => ucfirst($weather->day),
-        'description' => array_shift($weather->weather)->description,
+        'description' => $weather->weather[0]->description,
         'high_temp' => self::kelvinToFarenheit($weather->main->temp_max),
         'low_temp' => self::kelvinToFarenheit($weather->main->temp_min),
         'icon' => $weather->weather[0]->icon,
       ];
+
+      $this->logger->log(RfcLogLevel::DEBUG, "Description " . $weather->weather[0]->description . " fin.");
+      $this->logger->log(RfcLogLevel::DEBUG, "weekday " . ucfirst($weather->day) . " fin.");
+      $this->logger->log(RfcLogLevel::DEBUG, "weather icon " . $weather->weather[0]->icon . " fin.");
     }
 
-    $this->logger->log(RfcLogLevel::DEBUG, "Retunr array populated successfully");
+    $this->logger->log(RfcLogLevel::DEBUG, "Return array populated successfully");
 
     return $forecast;
   }

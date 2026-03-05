@@ -1,0 +1,14 @@
+.weather_page--forecast button {
+  font-size: 0.82rem;
+  margin: 1rem 0;
+  display: inline-block !important;
+  visibility: visible !important;
+}
+
+.weather_page--forecast button:hover {
+  cursor: pointer;
+}
+
+.short, .long {
+  display: block;
+}

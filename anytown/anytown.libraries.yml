@@ -1,0 +1,16 @@
+forecast:
+  css:
+    component:
+      css/forecast.css: {}
+  js:
+    js/forecast.js: {}
+  dependencies:
+    - core/drupal.once
+
+
+#tailwind_browser:
+#  js:
+#    https://unpkg:com/@tailwindcss/browser@4:
+#      type: external
+
+

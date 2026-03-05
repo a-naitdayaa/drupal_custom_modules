@@ -1,7 +1,8 @@
 anytown.weather_page:
-  path: '/weather'
+  path: '/weather/{style}'
   defaults:
     _title: 'Weather'
     _controller: '\Drupal\anytown\Controller\WeatherController::build'
+    style: 'short'
   requirements:
     _permission: 'access content'

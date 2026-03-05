@@ -42,7 +42,9 @@ class WeatherController extends ControllerBase {
   /**
    * Builds the response.
    */
-  public function build(): array {
+  public function build(string $style): array {
+    $style = (in_array($style, ['short', 'extended'])) ? $style : 'short';
+
     $url = 'https://raw.githubusercontent.com/DrupalizeMe/module-developer-guide-demo-site/main/backups/weather_forecast.json';
     $data = $this->forecastClient->getForecastData($url);
 
@@ -105,6 +107,11 @@ class WeatherController extends ControllerBase {
 
     $output = [
       '#theme' => 'weather_page',
+      '#attached' => [
+        'library' => [
+          'anytown/forecast',
+        ],
+      ],
       'weather_intro' => [
         '#markup' => "<p>Check out this weekend's weather forecast and come prepared. The market is mostly outside, and takes place rain or shine.</p>",
       ],

@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace  Drupal\anytown\Hook;
 
-
+use Drupal\Core\Hook\Attribute\Hook;
 /**
  * Hook related to theming and content output
  */

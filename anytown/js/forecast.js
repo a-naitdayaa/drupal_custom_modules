@@ -12,8 +12,7 @@
         // Create and configure a button to toggle between thet wo.
         const toggleButton = document.createElement('button');
         toggleButton.textContent = 'Toggle extended forecast';
-        toggleButton.style.display = 'inline-block';
-        toggleButton.style.visibility = 'visible';
+
         toggleButton.addEventListener('click', function () {
           long.classList.toggle('visually-hidden');
           short.classList.toggle('visually-hidden');

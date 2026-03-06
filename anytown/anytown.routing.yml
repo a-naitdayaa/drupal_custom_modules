@@ -5,4 +5,4 @@ anytown.weather_page:
     _controller: '\Drupal\anytown\Controller\WeatherController::build'
     style: 'short'
   requirements:
-    _permission: 'access content'
+    _permission: 'view weekly weather'

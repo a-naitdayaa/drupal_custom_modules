@@ -14,8 +14,8 @@ class HelloController extends ControllerBase
   public function content(){
     return [
       '#theme' => 'hello_block',
-      '#custom_data' => ['age' => '31', 'DOB' => '3 March 2026'],
-      '#custom_string' => 'Hello Block!',
+      '#custom_data' => ['age' => '22', 'DOB' => '21 Juin 2003'],
+      '#custom_string' => 'Hello Everyone, welcome to the hello_world page!',
     ];
   }
 }

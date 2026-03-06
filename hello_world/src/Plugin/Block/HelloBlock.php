@@ -23,9 +23,19 @@ class HelloBlock extends BlockBase {
    */
   public function build()
   {
+    $name = $this->configuration['hello_name'];
     return [
-      '#type' => 'markup',
-      '#markup' => $this->t('Hello world !'),
+      '#markup' => $this->t('Hello @name!', ['@name' => $name]),
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function defaultConfiguration() {
+    $default_config = \Drupal::config('hello_world.settings');
+    return [
+      'hello_name' => $default_config->get('hello.name') ?? 'World',
     ];
   }
 }

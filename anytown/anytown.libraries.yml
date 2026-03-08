@@ -8,6 +8,11 @@ forecast:
     - core/drupal.once
 
 
+menu:
+  css:
+    component:
+      css/menu.css: {}
+
 #tailwind_browser:
 #  js:
 #    https://unpkg:com/@tailwindcss/browser@4:

@@ -6,3 +6,11 @@ anytown.weather_page:
     style: 'short'
   requirements:
     _permission: 'view weekly weather'
+
+anytown.settings:
+  path: '/admin/config/system/anytown'
+  defaults:
+    _title: 'Weather Form'
+    _form: '\Drupal\anytown\Form\SettingsForm'
+  requirements:
+    _permission: 'administer site configuration'

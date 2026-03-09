@@ -112,12 +112,12 @@ class WeatherController extends ControllerBase {
           'anytown/forecast',
         ],
       ],
-      'weather_intro' => [
+      '#weather_intro' => [
         '#markup' => "<p>Check out this weekend's weather forecast and come prepared. The market is mostly outside, and takes place rain or shine.</p>",
       ],
-      'weather_forecast' => $weather_forecast,
-      'short_forecast' => $short_forecast,
-      'weather_closures' => [
+      '#weather_forecast' => $weather_forecast,
+      '#short_forecast' => $short_forecast,
+      '#weather_closures' => [
         '#theme' => 'item_list',
         '#title' => 'Weather related closures',
         '#items' => [

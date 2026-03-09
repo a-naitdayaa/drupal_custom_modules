@@ -5,7 +5,8 @@ forecast:
   js:
     js/forecast.js: {}
   dependencies:
-    - core/drupal.once
+    - core/drupal
+    - core/once
 
 
 menu:

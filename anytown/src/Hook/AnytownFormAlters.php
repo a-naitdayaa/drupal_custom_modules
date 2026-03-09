@@ -16,7 +16,7 @@ class AnytownFormAlters {
    */
   #[Hook('form_user_register_form_alter')]
   public function FormUserRegistrationAlter(array &$form, FormStateInterface $form_state) : void {
-    \Drupal::logger('anytown')->debug('form alter is firing');
+    //\Drupal::logger('anytown')->debug('form alter is firing');
 
     $form['#validate'][] = [self::class, 'validateFormUserRegistrationForm'];
 

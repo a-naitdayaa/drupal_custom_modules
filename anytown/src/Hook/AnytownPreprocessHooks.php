@@ -29,10 +29,31 @@ class AnytownPreprocessHooks{
   #[Hook('preprocess_page')]
   public function anytown_preprocess_page(array &$variables) : void {
     \Drupal::logger('anytown')->debug('Page preprocessing is firing');
-    dump($variables);
+    $variables['#attached']['html_head'][] = [
+      [
+        '#type' => 'html_tag',
+        '#tag' => 'meta',
+        '#attributes' => [
+          'name' => 'viewport',
+          'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        ],
+      ],
+      'viewport',
+    ];
     \Drupal::logger('anytown')->debug('Page preprocessing terminated successfully');
 
   }
 
-}
+  #[Hook('preprocess_block')]
+  public function anytown_preprocess_block(array &$variables) {
+    \Drupal::logger('anytown')->debug('Block preprocessing is firing');
+    if($variables['plugin_id'] === 'system_branding_block'){
+      $variables['content']['site_logo']['#uri'] = 'https://static.cdnlogo.com/logos/d/88/drupal-wordmark.svg';
+    }
+    dump($variables['content']);
+    \Drupal::logger('anytown')->debug('Block preprocessing terminated successfully');
+  }
+
+
+  }
 

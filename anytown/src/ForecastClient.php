@@ -10,10 +10,8 @@ namespace Drupal\anytown;
 
 use Drupal\Core\Logger\LoggerChannelFactoryInterface;
 use Drupal\Core\Logger\RfcLogLevel;
-use Drupal\anytown\ForecastClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\ClientInterface;
-
 
 class ForecastClient implements ForecastClientInterface {
   /**
@@ -53,7 +51,6 @@ class ForecastClient implements ForecastClientInterface {
       $data = json_decode($response->getBody()->getContents());
     }catch(GuzzleException $e){
       $this->logger->log(RfcLogLevel::WARNING, $e->getMessage());
-      return NULL;
     }
 
     $this->logger->log(RfcLogLevel::DEBUG, "Data Fetched successfully");

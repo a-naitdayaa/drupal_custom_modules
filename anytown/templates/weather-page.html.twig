@@ -13,6 +13,7 @@
  */
 #}
 
+
 <div class="weather_page">
   <div class="weather_page--messages">
     {{ weather_intro }}
@@ -32,3 +33,26 @@
     </div>
   {% endif %}
 </div>
+
+{#
+/**
+ * @file
+ * Default theme implementation for anytown weather_page.
+ *
+ * Available variables:
+ * - weather_intro: Any messages to display.
+ * - weather_forecast: Table with weekend forecast.
+ * - short_forecast: A summary of the forecast.
+ * - weather_closures: Any weather related closures, might be null.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{{ dump(is_front) }}
+
+{% if is_front %}
+<h1>This is the front page!</h1>
+{% else %}
+<h1>Not the front page.</h1>
+{% endif %}

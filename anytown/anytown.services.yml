@@ -3,3 +3,10 @@ services:
     class: Drupal\anytown\ForecastClient
     arguments: ['@http_client', '@logger.factory']  #specifying class dependencies. @ Denotes that it is a service and not a simple argument
   Drupal\anytown\ForecastClientInterface: '@anytown.forecast_client'  #specifies the implementation to use
+
+
+  anytown.preprocess_hooks:
+    class: Drupal\anytown\Hook\AnytownPreprocessHooks
+    arguments:
+      - '@path.matcher'
+      - '@logger.factory'

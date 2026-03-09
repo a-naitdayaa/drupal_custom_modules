@@ -44,8 +44,13 @@ class WeatherController extends ControllerBase {
    */
   public function build(string $style): array {
     $style = (in_array($style, ['short', 'extended'])) ? $style : 'short';
+    $settings = $this->config('anytown.settings');
 
     $url = 'https://raw.githubusercontent.com/DrupalizeMe/module-developer-guide-demo-site/main/backups/weather_forecast.json';
+    if ($location = $settings->get('location')) {
+      $url .= '?location=' . $location;
+    }
+
     $data = $this->forecastClient->getForecastData($url);
 
     $rows = [];
@@ -120,10 +125,7 @@ class WeatherController extends ControllerBase {
       '#weather_closures' => [
         '#theme' => 'item_list',
         '#title' => 'Weather related closures',
-        '#items' => [
-          'Ice rink closed until winter - please stay off while we prepare it.',
-          'Parking behind Apple Lane is still closed from all the rain last weekend.',
-        ],
+        '#items' => explode(PHP_EOL, $settings->get('weather_closures')),
       ],
     ];
 

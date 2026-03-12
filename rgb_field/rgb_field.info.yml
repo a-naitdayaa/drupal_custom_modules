@@ -1,0 +1,5 @@
+name: 'RGB Field'
+type: module
+description: 'Provides a custom field type for RGB color values.'
+core_version_requirement: ^10 || ^11
+package: Custom

@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Add 'additional_field' base field to Contact entity.
+ */
+function content_entity_example_update_10101() {
+  // Get the Entity Definition Update Manager service.
+  $update_manager = \Drupal::service('entity.definition_update_manager');
+
+  $fields = \Drupal::service('entity_field.manager')->getBaseFieldDefinitions('content_entity_example_contact');
+
+  if(!isset($fields['additional_field'])) {
+    throw new RuntimeException('The field "additional_field" is required.');
+  }
+
+  // Apply updates to synchronize base fields with database.
+  $update_manager->installFieldStorageDefinition(
+    'additional_field',
+    'content_entity_example_contact',
+    'content_entity_example_contact',
+    $fields['additional_field']
+  );
+
+  return t('Added base field "additional_field" to Contact entity.');
+}
